@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150913455-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-150913455-1');
+</script>
+		<meta charset="UTF-8">
+		<title>発言まとめメーカー</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript" src="maker.js"></script>
+	</head>
+	<body>
+		<div class="area0"><img src="title.jpg"></div>
+		<div class="area1">
+			<p class="title">使い方</p>
+			<p>下の欄に画像に入れる発言を入力してください。もっと入力したい場合は「発言を追加する」を押してください。入力が終わったら「これで作る」を押してください。画像が表示されます。</p><br>
+			<p class="title">コツ</p>
+			<p>発言は最低でも10個以上入れることをおすすめします。改行を多くすると、文字の密度が上がり良い感じになります。画像にはいくつかのパターンがあり、「これで作る」を押すと別のパターンに変化します。</p>
+		</div>
+		<div class="area2">
+			<p>発言を入力</p><br>
+			<form id="form1"><div id="lines">
+			<p><textarea id="line1" required placeholder="発言1"></textarea></p>
+			<p><textarea id="line2" placeholder="発言2"></textarea></p>
+				<p><textarea id="line3" placeholder="発言3"></textarea></p></div><br>
+			<p><input type="button" value="発言を追加する" onclick="add()"></p>
+			<p><input type="button" value="これで作る" onclick="check()"></p>
+			</form></div>
+		<div class="area3">
+		<div id="image"></div>
+		</div>
+		<div class="area4"><br>
+			<p>当サイトによって作成された画像およびその内容に関して、当サイトは何ら責任を負いません。</p><br>
+			<p>Developer <a href="https://twitter.com/2000ymon" target=”_blank”>@2000ymon</a></p>
+		</div>
+	</body>
+</html>
