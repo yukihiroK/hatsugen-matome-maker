@@ -7,17 +7,14 @@ body{
 	width:100%;
 	background-color:white;
 	color:#000000;
+	font-family:'Hiragino Kaku Gothic Pro',Meiryo,arial,helvetica,sans-serif;
+	font-size:calc(112.5% + 0.5vw);
 	-webkit-text-size-adjust:100%;
 }
 
 img {
 max-width:100%;
 height:auto;
-}
-
-p{
-	font-family:'Hiragino Kaku Gothic Pro',Meiryo,arial,helvetica,sans-serif;
-	font-size:16px;
 }
 
 area0{
@@ -83,11 +80,13 @@ area0{
 }
 
 .area2 input[type=button]{
-	width:150px;
+	-webkit-appearance:none;
+	width:350px;
 	margin-bottom:1.5em;
-	padding:10px 20px;
+	padding:15px 30px;
 	border-style:none;
-	border-radius:25px;
+	border-radius:50px;
+	font-size:calc(112.5% + 0.5vw);
 	font-weight:bold;
 	text-decoration:none;
 	color: #FFF;
@@ -96,6 +95,7 @@ area0{
 }
 
 .area2 input[type=button]:hover{
+	-webkit-appearance:none;
 	background-image: linear-gradient(45deg, #e2041b 0%, #884898 100%);
 }
 
