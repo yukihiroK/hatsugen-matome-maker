@@ -8,8 +8,7 @@ body{
 	background-color:white;
 	color:#000000;
 	font-family:'Hiragino Kaku Gothic Pro',Meiryo,arial,helvetica,sans-serif;
-	font-size:calc(112.5% + 0.5vw);
-	-webkit-text-size-adjust:100%;
+	font-size:1.5em;
 }
 
 img {
@@ -62,7 +61,7 @@ area0{
 }
 
 .area2 textarea{
-	font: 20px/150% sans-serif;
+	font: 1.5em/150% sans-serif;
 	width:80%;
 	margin-bottom:1em;
 	padding:0.3em;
@@ -70,7 +69,7 @@ area0{
 	letter-spacing:1px;
 	color:#302833;
 	border:1px solid #1b2538;
-	border-radius:4px;
+	border-radius:5px;
 }
 
 .area2 textarea:focus{
@@ -81,12 +80,12 @@ area0{
 
 .area2 input[type=button]{
 	-webkit-appearance:none;
-	width:350px;
+	width:50%;
 	margin-bottom:1.5em;
 	padding:15px 30px;
 	border-style:none;
 	border-radius:50px;
-	font-size:calc(112.5% + 0.5vw);
+	font-size:1.5em;
 	font-weight:bold;
 	text-decoration:none;
 	color: #FFF;
