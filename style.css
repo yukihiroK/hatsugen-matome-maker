@@ -7,6 +7,7 @@ body{
 	width:100%;
 	background-color:white;
 	color:#000000;
+	-webkit-text-size-adjust:100%;
 }
 
 img {
@@ -16,6 +17,7 @@ height:auto;
 
 p{
 	font-family:'Hiragino Kaku Gothic Pro',Meiryo,arial,helvetica,sans-serif;
+	font-size:16px;
 }
 
 area0{
