@@ -1,0 +1,137 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	width:100%;
+	background-color:white;
+	color:#000000;
+	font-family:'Hiragino Kaku Gothic Pro',Meiryo,arial,helvetica,sans-serif;
+	font-size:1.5em;
+}
+
+img {
+max-width:100%;
+height:auto;
+}
+
+area0{
+	width:100%;
+	background-color:white;
+}
+
+.area0 img{
+	margin-top:2em;
+	pointer-events: none;
+}
+
+.area1{
+	width:100%;
+	background:#65318e;
+	padding:3.5em 1.5em 2em;
+	margin-top:5em;
+	color:white;
+	border-top:dashed 10px white;
+}
+
+.area1 p{
+	padding:1.5em;
+	border:dotted;
+}
+
+.area1 .title{
+	border:none;
+	font-weight:bold;
+	text-align:center;
+}
+
+.area2{
+	width:100%;
+	background:#65318e;
+	padding:3.5em 1.5em 2em;
+	margin:0em 0em 0em;
+	color:white;
+	text-align:center;
+	border-bottom:dashed 10px #ffd900;
+}
+
+.area2 p{
+	font-weight:bold;
+}
+
+.area2 textarea{
+	font: 1.5em/150% sans-serif;
+	width:90%;
+	margin-bottom:1em;
+	padding:0.3em;
+	transition:0.3s;
+	letter-spacing:1px;
+	color:#302833;
+	border:1px solid #1b2538;
+	border-radius:5px;
+}
+
+.area2 textarea:focus{
+	border: 1px solid cyan;
+	outline: none;
+	box-shadow: 0 0 5px 1px #2ca9e1;
+}
+
+.area2 input[type=button]{
+	-webkit-appearance:none;
+	width:50%;
+	margin-bottom:1.5em;
+	padding:15px 30px;
+	border-style:none;
+	border-radius:50px;
+	font-size:1.5em;
+	font-weight:bold;
+	text-decoration:none;
+	color: #FFF;
+	background-color:#302833;
+	transition: .4s;
+}
+
+.area2 input[type=button]:hover{
+	-webkit-appearance:none;
+	background-image: linear-gradient(45deg, #e2041b 0%, #884898 100%);
+}
+
+.area3{
+	width:100%;
+	background:#ffd900;
+	padding:1em 1em;
+	margin:0em 0em 0em;
+	color:#ffd900;
+	text-align:center;
+	border-bottom:dashed 10px #302833;
+}
+
+.area3 img{
+	border:dotted 3px #333;
+	animation:fadeIn 0.5s ease 0s 1 normal;
+	-webkit-animation:fadeIn 0.5s ease 0s 1 normal;
+}
+ 
+@keyframes fadeIn {
+	0%{opacity:0;}
+	100%{opacity:1;}
+}
+
+.area4{
+	background:#302833;
+	padding:1em 1em;
+	color:white;
+	text-align:center;
+}
+
+.area4 a{
+	color:white;
+	text-decoration: none;
+}
+
+*,*:before,*:after{
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+}
