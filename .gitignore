@@ -1,2 +1,8 @@
 
 .DS_Store
+legacy/
+node_modules/
+public/
+package.json/
+package-lock.json/
+tsconfig.json/
