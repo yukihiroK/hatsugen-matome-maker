@@ -23,8 +23,8 @@ export class SentenceLayoutElement{
                 for(let j=0;j<this.texts[i].length;j++){
                     layout.push({
                         text: this.texts[i][j],
-                        x: Math.max(0, this.x - (i+1)*this.size), // right top -> left top
-                        y: this.y + j*this.size,
+                        x: Math.max(0, this.x - (i+0.5)*this.size), // TextAlign right -> center
+                        y: this.y + (j+0.5)*this.size, // baseline top -> middle
                         maxWidth: this.size
                     });
                 }
@@ -34,8 +34,8 @@ export class SentenceLayoutElement{
             for(let i=0;i<this.texts.length;i++){
                 layout.push({
                     text: this.texts[i],
-                    x: this.x,
-                    y: this.y + i*this.size,
+                    x: this.x, // TextAlign start
+                    y: this.y + (i+0.5)*this.size, // baseline top -> middle
                     maxWidth: this.texts[i].length*this.size
                 });
             }

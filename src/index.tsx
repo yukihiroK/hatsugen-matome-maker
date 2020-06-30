@@ -8,7 +8,8 @@ import { Typography, Container, Grid, Paper, Box, Divider, MuiThemeProvider, cre
 import TitleImage from './title.jpg';
 
 const howTo="下の空欄に発言を入力してください。もっと入力したいときは「＋」を押してください。入力が終わったら「作成」をタップ。"
-const hints="できるだけたくさんの発言を入力しましょう！改行を多くすると文字の密度が上がって良い感じになります。画像はシード値をもとにランダム生成され、「更新」を押すと別のパターンに変化します。"
+const hints="できるだけたくさんの発言を入力しましょう！画像はシード値をもとにランダム生成され、「更新」を押すと別のパターンに変化します。できた画像は長押しタップ等で保存できます。"
+const letstweet="「#発言まとめメーカー」をつけてツイートしよう！";
 const license="発言まとめメーカーで生成された画像は、商用・非商用問わず無料でご利用いただけます。自由に編集・加工していただいて構いませんし、報告等も特に必要ありません。ご利用の際のクレジット表記について、商用の場合は「発言まとめメーカー」の名前とリンクを入れてください。生成された画像、およびその内容によって生じる損害については一切の責任を負いかねますのでご了承ください。";
 
 const theme=createMuiTheme({
@@ -81,6 +82,7 @@ class App extends React.Component<AppProps,AppState>{
                 <Typography variant='h6' gutterBottom align='center'>使い方</Typography>
                 <Typography variant='body1' gutterBottom>{howTo}</Typography>
                 <Typography variant='body1' gutterBottom>{hints}</Typography>
+                <Typography variant='body1' gutterBottom>{letstweet}</Typography>
               </Box>
             </Paper>
           </Grid>

@@ -35,15 +35,18 @@ const Renderer:React.FC<props>=({statements, width, height, divider=5, seed=1234
             context.fillText("#発言まとめメーカー",width,height);
 
             const layout = new Layout(width/divider, height/divider, seed, statements, placeholder);
+            //layout.logMap();
 
-
-            context.textAlign="start";
-	        context.textBaseline="top";
+	        context.textBaseline="middle";
             context.fillStyle="black";
+
             layout.sentences.forEach((sentence)=>{
+                context.textAlign=sentence.isVertical?"center":"left";
+
                 const thickness=sentence.isBold?"bold ":"";
                 const font = `${sentence.isVertical?"'Noto Serif JP Vertical', ":""}'Noto Serif JP', 'Yu Mincho', 'Hiragino Mincho ProN', serif`;
                 context.font=`${thickness}${divider*sentence.size}px ${font}`;
+                
                 const lyts = sentence.getLayout();
                 lyts.forEach((lyt)=>{
                     context.fillText(lyt.text, divider*lyt.x, divider*lyt.y, divider*lyt.maxWidth);

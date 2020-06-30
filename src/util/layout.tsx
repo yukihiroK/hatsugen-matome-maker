@@ -33,6 +33,8 @@ export class Layout{
 
 
     constructor(width:number,height:number,seed:number,statements:string[],placeholder:placeholder={x:0,y:0,width:0,height:0}){
+        width=Math.round(width);
+        height=Math.round(height);
         this.width=width;
         this.height=height;
 
@@ -61,6 +63,18 @@ export class Layout{
         this.makeLayout();
     }
 
+
+    logMap=()=>{
+        console.log(`EmptyNum: ${this.emptyNum}`);
+        console.log(`EmptyNumRow: ${this.emptyNumRow}`);
+        console.log(`EmptyNumColumn: ${this.emptyNumColumn}`);
+        let log="";
+        this.availabilityMap.forEach((row)=>{
+            row.forEach((x)=>log+= x?'⚪':'🔴')
+            log+="\n";
+        });
+        console.log(log);
+    }
 
     setPlaceholder=(placeholder:placeholder)=>{
         const x=Math.round(placeholder.x);
@@ -102,7 +116,6 @@ export class Layout{
             //console.log(`${SentenceLayoutElement.verticalArray(sentence.texts).map((t)=>t+"\n")}\n`);
         });
     }
-
 
 
 
