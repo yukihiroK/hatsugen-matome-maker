@@ -6,6 +6,9 @@
   src: url(../fonts/NotoSerifJP-Medium-Vertical.woff2) format('woff2'),
         url(../fonts/NotoSerifJP-Medium-Vertical.woff) format('woff'),
         url(../fonts/NotoSerifJP-Medium-Vertical.otf) format('otf');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 /* bold */
 @font-face {
@@ -15,4 +18,5 @@
         url(../fonts/NotoSerifJP-Bold-Vertical.otf) format('otf');
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
