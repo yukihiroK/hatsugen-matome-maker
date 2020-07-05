@@ -28,7 +28,12 @@ const Renderer:React.FC<props>=({texts, width, height, backgroundColor='white',c
         if(context){
             
             const families:string[] = [];
-            texts.forEach((t)=>{if(!families.includes(`${t.fontName}:400,700`))families.push(`${t.fontName}:400,700`)});
+            texts.forEach((t)=>{
+                if(!families.includes(`${t.fontName}:400,700`)){
+                    families.push(`${t.fontName}:400,700`);
+                    families.push(`${t.fontName} Vertical:400,700`);
+                }
+            });
 
             WebFont.load({
                 custom:{
