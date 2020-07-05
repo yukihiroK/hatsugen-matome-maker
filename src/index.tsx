@@ -6,6 +6,7 @@ import InputForm from './InputForm';
 import Renderer from './renderer';
 import { Typography, Container, Grid, Paper, Box, Divider, MuiThemeProvider, createMuiTheme, Link } from '@material-ui/core';  
 import TitleImage from './title.jpg';
+import TextProps from './util/text_props';
 
 const howTo="下の空欄に発言を入力してください。もっと入力したいときは「＋」を押してください。入力が終わったら「作成」をタップ。"
 const hints="できるだけたくさんの発言を入力しましょう！画像はシード値をもとにランダム生成され、「更新」を押すと別のパターンに変化します。できた画像は長押しタップ等で保存できます。"
@@ -39,7 +40,10 @@ interface AppProps{
 
 interface AppState{
   seed:number,
-  statements:string[],
+  //statements:string[],
+  texts:TextProps[],
+  backgroundColor:string,
+  color:string,
 }
 
 class App extends React.Component<AppProps,AppState>{
@@ -47,14 +51,14 @@ class App extends React.Component<AppProps,AppState>{
   constructor(props:AppProps){
     super(props);
     
-    this.state={statements:[],seed:1234567};
+    this.state={texts:[],seed:1234567,backgroundColor:'white',color:'black'};
 
   }
 
-  submitProperties=(seed:number, statements:string[])=>{
-    const sum = statements.reduce((acc,cur)=>acc+cur.length,0);
-    if(sum===0)statements=new Array(100).fill("発言を入力してください");
-    this.setState({seed:seed ,statements:statements});
+  submitProperties=(seed:number,texts:TextProps[],backgroundColor:string,color:string)=>{
+    //const sum = statements.reduce((acc,cur)=>acc+cur.length,0);
+    //if(sum===0)statements=new Array(100).fill("発言を入力してください");
+    this.setState({seed:seed ,texts:texts,backgroundColor:backgroundColor,color:color});
     //console.log(statements)
     //this.setState({statements:s});
   }
@@ -102,13 +106,14 @@ class App extends React.Component<AppProps,AppState>{
 
       <Container style={{background:'#ede7f6'}}>
         <InputForm onSubmit={this.submitProperties}/>
-        {(this.state.statements.length===0)
+        {(this.state.texts.length===0)
           ?null
           :<Box paddingBottom={4}><Paper elevation={3}><Box padding={2}>
-            <Renderer statements={this.state.statements} seed={this.state.seed} width={1500} height={1000}/>
+            <Renderer texts={this.state.texts} seed={this.state.seed} width={1500} height={1000} backgroundColor={this.state.backgroundColor} color={this.state.color}/>
           </Box></Paper></Box>
         }
       </Container>
+
 
       <Box style={{background:'#302833', color:'white'}}>
         <Typography align='center'>発言まとめメーカー</Typography>

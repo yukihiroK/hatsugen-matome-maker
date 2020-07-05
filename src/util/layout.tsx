@@ -111,7 +111,7 @@ export class Layout{
     makeLayout=()=>{
         this.sentences.forEach((sentence)=>{
             this.locateSentence(sentence);
-            sentence.isBold=(this.rand.rand()%3===0); // 1/3で太字
+            //sentence.isBold=(this.rand.rand()%3===0); // 1/3で太字
             //console.log(`${sentence.texts}\nX: ${sentence.x} Y: ${sentence.y}\nSize: ${sentence.size} IsVertical: ${sentence.isVertical}\n`);
             //console.log(`${SentenceLayoutElement.verticalArray(sentence.texts).map((t)=>t+"\n")}\n`);
         });
