@@ -2,7 +2,7 @@
 
 ○○の発言まとめてみた、みたいな画像がつくれます。
 
-[https://yukihirok.github.io/hatsugen-matome-maker/](https://yukihirok.github.io/hatsugen-matome-maker/)
+[hatsugen-matome-maker.yukihiro.work](https://hatsugen-matome-maker.yukihiro.work)
 
 
 
