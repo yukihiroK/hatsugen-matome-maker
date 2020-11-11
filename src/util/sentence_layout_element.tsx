@@ -6,13 +6,12 @@ export class SentenceLayoutElement{
     isVertical:boolean;
     //isBold:boolean;
 
-    constructor(texts:string[],x:number,y:number,size:number,isVertical:boolean=false,/*isBold:boolean=false*/){
+    constructor(texts:string[], x:number, y:number, size:number, isVertical:boolean,){
         this.texts=texts;
         this.x=Math.max(0,x);
         this.y=Math.max(0,y);
         this.size=Math.max(1,size);
         this.isVertical=isVertical;
-        //this.isBold=isBold;
     }
 
     getLayout=()=>{

@@ -80,14 +80,14 @@ const Renderer:React.FC<props>=({texts, width, height, backgroundColor='white',c
             const lyts = sentence.getLayout();
             lyts.forEach((lyt)=>{
                 context.fillText(lyt.text, divider*lyt.x, divider*lyt.y, divider*lyt.maxWidth);
-            });                
+            });
         });
 
     }
 
 
 
-    return (<img alt="お使いのブラウザはWebフォントに対応していません。" src={image}/>);
+    return (<img alt="画像を生成中です。しばらく経っても画像が表示されない場合は、お使いのブラウザがWebフォントに対応していない可能性があります。" src={image}/>);
     
 }
 

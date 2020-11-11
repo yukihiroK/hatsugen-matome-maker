@@ -1,5 +1,8 @@
 import { XorShift32 } from './xorshift32';
 import {SentenceLayoutElement} from './sentence_layout_element'
+import { Console } from 'console';
+
+const HorizontalChars = ["〰","゛","゜", ",", ".", "：","；","﹐","﹑","﹒","﹙","﹚", "(", ,")", "﹛","﹜","﹝","﹞","‘","’","“","”",'"',"'"]
 
 interface placeholder{
     x:number,
@@ -55,7 +58,11 @@ export class Layout{
         this.rand=new XorShift32(seed);
 
         this.sentences = statements.filter( (text:string) => !(text.length===0) )
-            .map((text:string) => new SentenceLayoutElement(text.split(/\r\n|\r|\n/),0,0,1));
+            .map((text:string) =>{
+                let shouldHorizontal = text.split('').some(char => HorizontalChars.includes(char))
+                let isVert = shouldHorizontal ? false : (this.rand.rand()%3===0)
+                 return new SentenceLayoutElement(text.split(/\r\n|\r|\n/), 0, 0, 1, isVert)
+                });
 
         const splitedTexts = statements.map((statement:string) => statement.split(/\r\n|\r|\n/));
         this.remainingCharNum = splitedTexts.reduce((acc,cur)=> acc + cur.reduce((a,c) => a+c.length,0), 0)
@@ -111,9 +118,6 @@ export class Layout{
     makeLayout=()=>{
         this.sentences.forEach((sentence)=>{
             this.locateSentence(sentence);
-            //sentence.isBold=(this.rand.rand()%3===0); // 1/3で太字
-            //console.log(`${sentence.texts}\nX: ${sentence.x} Y: ${sentence.y}\nSize: ${sentence.size} IsVertical: ${sentence.isVertical}\n`);
-            //console.log(`${SentenceLayoutElement.verticalArray(sentence.texts).map((t)=>t+"\n")}\n`);
         });
     }
 
@@ -122,7 +126,7 @@ export class Layout{
     locateSentence=(sentence:SentenceLayoutElement)=>{
 
         let sizeFactor:number = Math.floor( Math.sqrt(this.emptyNum/this.remainingCharNum) );
-        const isVertical=(this.rand.rand()%3===0) // 1/3 で縦書き
+        const isVertical= sentence.isVertical ?? (this.rand.rand()%3===0) // 1/3 で縦書き
 
         while(sizeFactor>0){
             if(isVertical){ // 縦書きモード
